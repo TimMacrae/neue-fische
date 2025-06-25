@@ -69,6 +69,6 @@ public class Main {
         String a = "a";
         System.out.println("a == B " + a.equals(B));
 
-      
+
     }
 }
