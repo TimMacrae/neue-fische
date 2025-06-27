@@ -40,4 +40,13 @@ public class MainTest {
     void isPositive_shouldReturnFalse_whenCalledWith2 (){
         assertFalse(Main.isPositive(0));
     }
+
+    @Test
+    void fizzBuzz_tdd (){
+        assertEquals("FizzBuzz", Main.fizzBuzz(15));
+        assertEquals("Fizz", Main.fizzBuzz(9));
+        assertEquals("Buzz", Main.fizzBuzz(10));
+        assertEquals("2", Main.fizzBuzz(2));
+        assertEquals("Fizz", Main.fizzBuzz(-3));
+    }
 }
