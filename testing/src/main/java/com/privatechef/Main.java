@@ -17,4 +17,12 @@ public class Main {
         return a * b;
     }
 
+    public  static String stringToUppercase(String text){
+        return text.toUpperCase();
+    }
+
+    public static boolean isPositive(int num){
+        return num > 0;
+    }
+
 }
