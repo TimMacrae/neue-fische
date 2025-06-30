@@ -1,10 +1,23 @@
 package com.privatechef;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
+
+
+    @ParameterizedTest
+    @CsvSource({
+            "1, 2, 3",
+            "5, 5, 10"
+    })
+    public void add(int a, int b, int expected) {
+        int actual = Main.add(a, b);
+        assertEquals(expected, actual);
+    }
 
     @Test
     void isEven_shouldReturnTrue_whenCalledWith2 (){
@@ -49,4 +62,6 @@ public class MainTest {
         assertEquals("2", Main.fizzBuzz(2));
         assertEquals("Fizz", Main.fizzBuzz(-3));
     }
+
+
 }

@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlayerCharacterTest {
     private PlayerCharacter player;
 
-    @Test
     @BeforeEach
     void setUp() {
         player = new PlayerCharacter();
