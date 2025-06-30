@@ -3,6 +3,7 @@ package com.privatechef;
 public class PlayerCharacter {
     int[] position = {0,0};
 
+    // Getter & Setter
     public int getX() {
         return this.position[0];
     }
@@ -23,6 +24,7 @@ public class PlayerCharacter {
         return this.position;
     }
 
+    // Move the character
     public int[] moveW(){
         position[0]++;
         return this.position;
