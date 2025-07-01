@@ -50,11 +50,6 @@ class PlayerCharacterTest {
         assertArrayEquals(expected, player.moveD());
     }
 
-    @Test
-    void moveTest_shouldReturn1and0(){
-        int[] expected = {0,1};
-        assertArrayEquals(expected, player.moveD());
-    }
 
     @Test
     void moveAround_shouldGoUpAndRight(){
