@@ -12,6 +12,6 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public void information() {
-       System.out.println("Information with doors: " + this.getManufacturer() + " " + this.getModel() + " " + this.getYearOfManufacture() + " " + type + " " + ps);
+       System.out.println("Information with doors: " + this.getManufacturer() + " " + this.getModel() + " " + this.getYearOfManufacture() + " " + type + " " + this.ps);
     }
 }
