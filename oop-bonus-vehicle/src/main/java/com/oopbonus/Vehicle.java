@@ -1,6 +1,6 @@
 package com.oopbonus;
 
-public abstract class Vehicle implements Accelerateable{
+public class Vehicle implements Accelerateable{
     protected String id;
     protected String name;
     protected int velocity;
@@ -27,4 +27,11 @@ public abstract class Vehicle implements Accelerateable{
     public void brake() {
         this.velocity = 0;
     }
+
+    @Override
+    public int accelerate(int kmh) {
+        return velocity + kmh;
+    }
+
+
 }

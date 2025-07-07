@@ -1,6 +1,6 @@
 package com.oopbonus;
 
 public interface Accelerateable {
-   void accelerate(int kmh);
+   int accelerate(int kmh);
    void brake();
 }

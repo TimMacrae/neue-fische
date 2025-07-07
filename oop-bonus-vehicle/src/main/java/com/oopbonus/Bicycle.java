@@ -7,13 +7,14 @@ public class Bicycle extends Vehicle {
     }
 
     @Override
-    public void accelerate(int kmh) {
-        if((this.velocity += kmh) > 35) {
+    public int accelerate(int kmh) {
+        if((velocity += kmh) > 35) {
             System.out.println("kmh is over 35, this is not allowed");
-            return;
+            return velocity;
         }
         System.out.println(name + " accelerated by " + kmh + " km/h. New speed: " + velocity + " km/h.");
-        this.velocity += kmh;
+        velocity += kmh;
+        return velocity;
     }
 
 }

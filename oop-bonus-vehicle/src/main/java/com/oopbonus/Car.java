@@ -6,8 +6,9 @@ public class Car extends Vehicle{
     }
 
     @Override
-    public void accelerate(int kmh) {
+    public int accelerate(int kmh) {
         this.velocity += kmh;
         System.out.println(name + " accelerated by " + kmh + " km/h. New speed: " + velocity + " km/h.");
+        return velocity;
     }
 }
