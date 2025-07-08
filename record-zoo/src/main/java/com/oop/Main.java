@@ -22,10 +22,10 @@ public class Main {
 
         // Bonus
         Zoo zoo = new Zoo(List.of(monkey,kangaroo), 0).calculateTotalFood();
-        System.out.println("Zoo: " + zoo.toString());
+        //System.out.println("Zoo: " + zoo.toString());
 
         // Bonus
-        var newZooAnimal =  zoo.addAnimal(wallaby).calculateTotalFood();
-        System.out.println("Zoo: " + newZooAnimal.toString());
+        zoo = zoo.addAnimal(wallaby).calculateTotalFood();
+        System.out.println("Zoo: " + zoo.toString());
     }
 }
