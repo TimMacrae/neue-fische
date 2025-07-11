@@ -1,6 +1,7 @@
 package com.ecosystem;
 
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.UUID;
 
 
@@ -24,6 +25,19 @@ public class Main {
 
         System.out.println(personRepo.countGenders());
         System.out.println(personRepo.getAllPersonsWithTheFavoriteDay(DaysOfWeek.SATURDAY));
+
+        Optional<Person>optPerson = personRepo.getPersonById(UUID.randomUUID());
+        if (optPerson.isPresent()) {
+            System.out.println(optPerson.get().name());
+            System.out.println(optPerson.get().gender());
+        }
+
+        Optional<Person>optPersonName = personRepo.getPersonByName("Tim");
+        optPersonName.ifPresent(person -> System.out.println(person.name()));
+
+        Person optPersonName2 = personRepo.getPersonByName("Alex").orElseThrow(()-> new IllegalArgumentException("Name not found"));
+        System.out.println(optPersonName2.name());
+
 
 
     }

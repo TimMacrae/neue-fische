@@ -22,4 +22,12 @@ public class PersonRepo {
        return persons.values().stream().filter(person -> person.favoriteDay().equals(favoriteDay)).toList();
     }
 
+    public Optional<Person> getPersonById(UUID id) {
+        return Optional.ofNullable(persons.get(id));
+    }
+
+    public Optional<Person> getPersonByName(String name) {
+        return (persons.values().stream().filter(person -> person.name().equals(name)).findFirst());
+    }
+
 }
