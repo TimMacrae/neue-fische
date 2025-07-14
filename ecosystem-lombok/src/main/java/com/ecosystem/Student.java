@@ -3,12 +3,14 @@ package com.ecosystem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.UUID;
+
 @AllArgsConstructor
 @Data
 public class Student {
     private String firstName;
     private String lastName;
-    private String id;
+    private UUID id;
     private String address;
-    private String grade;
+    private double grade;
 }
