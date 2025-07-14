@@ -8,5 +8,9 @@ public class Main {
         System.out.println("Development branch");
     }
 
+    public void featureMethod() {
+        System.out.println("Feature Method");
+    }
+
 
 }
