@@ -15,5 +15,9 @@ public class StudentService {
     public List<Student> getAllStudents(){
         return repo.getAllStudents();
     }
+
+    public Student getStudentById(String id) {
+            return  repo.findStudentById(id).orElseThrow(()->new NoStudentFoundException("No Student with the id: " + id + " found" ));
+    }
 }
 
