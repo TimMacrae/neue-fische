@@ -15,6 +15,11 @@ import java.util.List;
 public class CharacterController {
     private final CharacterService characterService;
 
+    @GetMapping("/character/{id}")
+    ResponseEntity<AsterixCharacter> getCharacterById(@PathVariable String id) {
+        return ResponseEntity.ok(characterService.getCharacterById(id));
+    }
+
     @GetMapping("/character")
     ResponseEntity<List<AsterixCharacter>> getCharacters(@RequestParam(required = false) String profession) {
         return ResponseEntity.ok(characterService.getCharacters(profession));

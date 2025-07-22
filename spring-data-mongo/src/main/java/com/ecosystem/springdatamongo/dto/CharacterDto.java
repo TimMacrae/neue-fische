@@ -1,8 +1,10 @@
 package com.ecosystem.springdatamongo.dto;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-@Getter
+@Data
+@AllArgsConstructor
 public class CharacterDto {
     private String name;
     private int age;
