@@ -19,7 +19,7 @@ import java.time.LocalDate;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@DirtiesContext
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 class CharacterControllerTest {
 
     @Autowired
@@ -31,10 +31,10 @@ class CharacterControllerTest {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @AfterEach
-    void cleanUpDatabase() {
-        mongoTemplate.getDb().drop();
-    }
+//    @AfterEach
+//    void cleanUpDatabase() {
+//        mongoTemplate.getDb().drop();
+//    }
 
 
     @Test
@@ -138,13 +138,13 @@ class CharacterControllerTest {
     @Test
     void addCharacter_shouldAddCharacter() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/api/character").contentType(MediaType.APPLICATION_JSON).content(
-                """
-                        {"name":"Miracolix",
-                        "age": 104,
-                        "profession": "druid"
-                        }
-                """
-        )).andExpect(MockMvcResultMatchers.status().isOk())
+                        """
+                                        {"name":"Miracolix",
+                                        "age": 104,
+                                        "profession": "druid"
+                                        }
+                                """
+                )).andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").isNotEmpty())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Miracolix"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.age").value(104))
@@ -159,11 +159,11 @@ class CharacterControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.put("/api/character/3").contentType(MediaType.APPLICATION_JSON).content(
                         """
-                                {"name":"Obelix",
-                                "age": 21,
-                                "profession": "boss"
-                                }
-        """
+                                                        {"name":"Obelix",
+                                                        "age": 21,
+                                                        "profession": "boss"
+                                                        }
+                                """
                 )).andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").isNotEmpty())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Obelix"))
