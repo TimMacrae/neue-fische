@@ -12,14 +12,14 @@ public class RestClientService {
 
     private final RestClient restClient;
 
-
     public RestClientService(RestClient.Builder restClientBuilder) {
         this.restClient = restClientBuilder.baseUrl("https://rickandmortyapi.com/api").build();
     }
 
     public List<RUMCharacter> getCharacters (){
         // retrieve is starting the request / body is the result data format
-       return  restClient.get().uri("/character").retrieve().body(RUMCharacterApiResponse.class).results();
+       return  restClient.get()
+               .uri("/character").retrieve().body(RUMCharacterApiResponse.class).results();
     }
 
     public RUMCharacter getCharacterById(int id){

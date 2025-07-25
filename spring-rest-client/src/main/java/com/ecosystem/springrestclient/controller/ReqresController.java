@@ -14,15 +14,15 @@ import java.util.List;
 @RequestMapping("/api/users")
 @AllArgsConstructor
 public class ReqresController {
-    ReqresService reqresService;
-
-    @GetMapping
-    public List<ReqUser> getUsers(){
-        return reqresService.getUsers();
-    }
-
-    @PostMapping
-    public ReqUserApiResponseDto createUser(@RequestBody ReqUserDto userDto){
-        return reqresService.createUser(userDto);
-    }
+//    ReqresService reqresService;
+//
+//    @GetMapping
+//    public List<ReqUser> getUsers(){
+//        return reqresService.getUsers();
+//    }
+//
+//    @PostMapping
+//    public ReqUserApiResponseDto createUser(@RequestBody ReqUserDto userDto){
+//        return reqresService.createUser(userDto);
+//    }
 }

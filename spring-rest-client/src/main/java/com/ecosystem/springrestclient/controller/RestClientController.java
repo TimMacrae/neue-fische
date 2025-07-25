@@ -3,17 +3,17 @@ package com.ecosystem.springrestclient.controller;
 import com.ecosystem.springrestclient.model.RUMCharacter;
 import com.ecosystem.springrestclient.service.RestClientService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/characters")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class RestClientController {
 
-    RestClientService restClientService;
-
+    private final RestClientService restClientService;
 
     @GetMapping
     public List<RUMCharacter> getCharacters(){
